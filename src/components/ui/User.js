@@ -11,7 +11,7 @@ const User = ({ user }) => {
       <div className="user-info">
         <h4>{login}</h4>
         <small>{id}</small>
-        <Link to={`/user/${login}`}>view profile</Link>
+        <Link to={`/user/${login}`}>view profile </Link>
       </div>
     </div>
   );

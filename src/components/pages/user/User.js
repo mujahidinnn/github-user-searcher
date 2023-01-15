@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "./User.css";
-import { MdArrowBackIos } from "react-icons/md";
+import React, { useEffect, useState } from "react";
 import { BsGithub } from "react-icons/bs";
-import { MdLocationPin } from "react-icons/md";
-import { IoGlobeOutline } from "react-icons/io5";
 import { FaUserFriends } from "react-icons/fa";
+import { IoGlobeOutline } from "react-icons/io5";
+import { MdArrowBackIos, MdLocationPin } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import axios from "../../../axios";
 import Repo from "../../ui/Repo";
+import "./User.css";
 
 const User = () => {
   const { login } = useParams();
@@ -31,7 +30,7 @@ const User = () => {
       }
     };
     fetchUserInformation();
-  }, []);
+  }, [login]);
 
   return (
     <div className="container">
@@ -65,7 +64,7 @@ const User = () => {
             )}
             <p>
               <BsGithub />
-              &nbsp; <a href={userInfo?.html_url}>view github profile</a>
+              &nbsp; <a href={userInfo?.html_url}>view github profile </a>
             </p>
           </div>
         </div>
